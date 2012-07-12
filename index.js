@@ -1,7 +1,9 @@
 var fs = require('fs');
 var path = require('path');
-var figc = require('figc');
+
 var parents = require('parents');
+var figc = require('figc');
+var optimist = require('optimist');
 
 var exists = fs.existsSync || path.existsSync;
 
@@ -18,7 +20,8 @@ module.exports = function (opts) {
         }).concat(prefix + '.json')
     ;
     
-    var files = parents(opts.dir || path.dirname(require.main.filename))
+    var dirs = parents(opts.dir || path.dirname(require.main.filename));
+    var configFiles = dirs
         .map(function (dir) {
             for (var i = 0; i < files.length; i++) {
                 var file = path.join(dir, files[i]);
@@ -27,7 +30,10 @@ module.exports = function (opts) {
         })
         .filter(Boolean)
     ;
-    return files.reduce(function (config, file) {
+    var argv = opts.argv || optimist.argv;
+    if (configFiles.length === 0) return argv;
+    
+    return configFiles.reduce(function (config, file) {
         return figc(file, config);
-    }, opts.argv);
+    }, argv);
 };
