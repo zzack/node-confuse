@@ -15,7 +15,7 @@ module.exports = function (opts) {
     var prefix = opts.prefix || 'config';
     
     var files = opts.files ||
-        (opts.env || []).map(function (e) {
+        [].concat(opts.env || []).map(function (e) {
             return prefix + '.' + e + '.json'
         }).concat(prefix + '.json')
     ;
