@@ -1,0 +1,41 @@
+{
+    "name" : "confuse",
+    "version" : "0.0.0",
+    "description" : "merge arguments and config files recursively up a directory tree",
+    "main" : "index.js",
+    "bin" : {},
+    "directories" : {
+        "example" : "example",
+        "test" : "test"
+    },
+    "dependencies" : {
+        "parents" : "~0.0.1",
+        "figc" : "~0.0.2",
+        "optimist" : "~0.3.4"
+    },
+    "devDependencies" : {
+        "tap" : "~0.2.5"
+    },
+    "scripts" : {
+        "test" : "tap test/*.js"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/substack/node-confuse.git"
+    },
+    "homepage" : "https://github.com/substack/node-confuse",
+    "keywords" : [
+        "config",
+        "recursive",
+        "options",
+        "merge",
+        "hierarchy"
+    ],
+    "author" : {
+        "name" : "James Halliday",
+        "email" : "mail@substack.net",
+        "url" : "http://substack.net"
+    },
+    "license" : "MIT",
+    "engine" : { "node" : ">=0.6" }
+}
