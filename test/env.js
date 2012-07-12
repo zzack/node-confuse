@@ -17,7 +17,7 @@ test('env', function (t) {
         W: 777, q: { w: 7, z: 606 }, n: 2, Z: 60606
     });
     t.same(confuse(config('foo/bar')), {
-        W: 777, q: { w: 7, z: 6, y: 5 }, n: 1, Z: 666, Y: 555
+        W: 777, q: { w: 7, z: 606, y: 5 }, n: 1, Z: 60606, Y: 555
     });
     t.same(confuse(config('foo/bar/baz')), {
         W: 777, q: { w: 7, z: 606, y: 5, x: 4 }, n: 0,
