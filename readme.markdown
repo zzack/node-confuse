@@ -3,6 +3,8 @@
 Merge command-line arguments and config files deeply and recursively up a
 directory hierarchy with a preference for the most local config file.
 
+[![build status](https://secure.travis-ci.org/substack/node-confuse.png)](http://travis-ci.org/substack/node-confuse)
+
 # example
 
 In this `example/` directory there are some nested config files and scripts.
